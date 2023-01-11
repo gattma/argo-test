@@ -14,7 +14,7 @@ spec:
         app: web-2
     spec:
       containers:
-      — name: nginx
+      - name: nginx
         image: nginx
         ports:
-        — containerPort: 80
+        - containerPort: 80
