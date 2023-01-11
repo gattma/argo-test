@@ -3,6 +3,7 @@ kind: ApplicationSet
 metadata:
   name: instances
   namespace: gattma-pg
+spec:
   syncPolicy:
     preserveResourcesOnDeletion: false
   generators:
