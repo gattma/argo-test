@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: twalter/openshift-nginx
         ports:
         - containerPort: 80
