@@ -2,6 +2,7 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: test-2
+  namespace: gp-cicd-tools
 spec:
   components:
     - name: wf-poc-app-2
