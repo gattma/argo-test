@@ -4,7 +4,7 @@ metadata:
   name: demo-app-initializer-app
   namespace: argocd
 spec:
-  project: default
+  project: app-of-apps
   source:
     repoURL: https://github.com/gattma/argo-test.git
     targetRevision: app-of-apps-test
