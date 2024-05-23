@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:gattma/argo-test.git
-    targetRevision: HEAD
+    repoURL: https://github.com/gattma/argo-test.git
+    targetRevision: app-of-apps-test
     path: appsets
   destination:
     server: https://kubernetes.default.svc

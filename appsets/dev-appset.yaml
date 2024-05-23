@@ -8,8 +8,8 @@ spec:
   goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
-      repoURL: git@github.com:gattma/argo-test.git
-      revision: HEAD
+      repoURL: https://github.com/gattma/argo-test.git
+      revision: app-of-apps-test
       directories:
       - path: apps/*/envs/dev
 
@@ -19,7 +19,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: git@github.com:gattma/argo-test.git
+        repoURL: https://github.com/gattma/argo-test.git
         targetRevision: HEAD
         path: '{{.path.path}}'
       destination:
