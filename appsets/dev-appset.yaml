@@ -20,7 +20,7 @@ spec:
       project: app-of-apps
       source:
         repoURL: https://github.com/gattma/argo-test.git
-        targetRevision: HEAD
+        targetRevision: app-of-apps-test
         path: '{{.path.path}}'
       destination:
         server: https://kubernetes.default.svc
