@@ -3,6 +3,8 @@ kind: Kustomization
 
 namespace: dev
 namePrefix: dev-
+commonLabels:
+  stage: dev
 
 resources:
 - ../../base
