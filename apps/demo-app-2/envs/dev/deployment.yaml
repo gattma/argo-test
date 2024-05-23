@@ -4,7 +4,7 @@ metadata:
   name: hello-world-deployment-dev
   labels:
     app: hello-world
-    stage: prod
+    stage: dev
 spec:
   selector:
     matchLabels:
