@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: k8s.gcr.io/echoserver:1.9
+        image: mendhak/http-https-echo:32

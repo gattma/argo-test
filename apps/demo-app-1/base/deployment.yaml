@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: k8s.gcr.io/echoserver:1.10
+        image: mendhak/http-https-echo:latest
         ports:
         - containerPort: 8080
