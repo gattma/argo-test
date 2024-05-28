@@ -1,0 +1,18 @@
+# Values for app-of-apps mobilepos's DEV stage.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+namespaceOverwrite: "argocd"
+
+global:
+  appProject: "app-of-apps"
+  destinationServer: "https://kubernetes.default.svc"
+  destinationNamespace: "demo-app-2-dev"
+  syncPolicy:
+    automated: { }
+
+directoryApps:
+  - name: "demo-app-2-dev"
+    source:
+      repoURL: "https://github.com/gattma/argo-test.git"
+      targetRevision: "app-of-apps-old"
+      path: "apps/demo-app-2-dev"
