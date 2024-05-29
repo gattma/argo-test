@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/gattma/argo-test.git
-    targetRevision: HEAD
+    targetRevision: app-of-apps-old
     path: app-of-apps
     helm:
       valueFiles:
