@@ -7,7 +7,6 @@ metadata:
   name: {{ .name | quote }}
   namespace: {{ $.Values.namespaceOverwrite | default "ics-int-gitops-prod" }}
   labels:
-    {{- include "app-of-apps.labels" $ | nindent 4 }}
     type: argoApp
 spec:
   source:

@@ -14,7 +14,7 @@ spec:
     path: app-of-apps
     helm:
       valueFiles:
-        - values-prod.yml
+        - values-prod.yaml
   syncPolicy:
     automated:
       prune: true
