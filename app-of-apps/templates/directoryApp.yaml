@@ -17,18 +17,18 @@ spec:
   ignoreDifferences:
   {{ toYaml .ignoreDifferences | indent 4 }}
   {{- end }}
-project: {{ .appProject | default $.Values.global.appProject | quote }}
-destination:
-  {{- if .destination }}
-  server: {{ .destination.server | default $.Values.global.destinationServer | quote }}
-  namespace: {{ .destination.namespace | default $.Values.global.destinationNamespace | quote }}
-  {{- else }}
-  server: {{ $.Values.global.destinationServer | default "https://kubernetes.default.svc" | quote }}
-  namespace: {{ $.Values.global.destinationNamespace | quote }}
-  {{- end }}
-  {{- if or .syncPolicy $.Values.global.syncPolicy }}
-syncPolicy:
-  {{ toYaml (.syncPolicy | default $.Values.global.syncPolicy ) | indent 4 }}
-  {{- end }}
+  project: {{ .appProject | default $.Values.global.appProject | quote }}
+  destination:
+    {{- if .destination }}
+    server: {{ .destination.server | default $.Values.global.destinationServer | quote }}
+    namespace: {{ .destination.namespace | default $.Values.global.destinationNamespace | quote }}
+    {{- else }}
+    server: {{ $.Values.global.destinationServer | default "https://kubernetes.default.svc" | quote }}
+    namespace: {{ $.Values.global.destinationNamespace | quote }}
+    {{- end }}
+    {{- if or .syncPolicy $.Values.global.syncPolicy }}
+  syncPolicy:
+    {{ toYaml (.syncPolicy | default $.Values.global.syncPolicy ) | indent 4 }}
+    {{- end }}
 ...
 {{- end }}
