@@ -7,10 +7,10 @@ spec:
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
-  project: default
+  project: app-of-apps
   source:
     repoURL: https://github.com/gattma/argo-test.git
-    targetRevision: HEAD
+    targetRevision: app-of-apps-old
     path: app-of-apps
     helm:
       valueFiles:
