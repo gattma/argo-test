@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    stage: dev
+  name: dev-hello-world
+  namespace: demo-app-1-dev
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: hello-world
+    stage: dev
+  type: ClusterIP

@@ -1,21 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world-deployment
   labels:
     app: hello-world
+    stage: dev
+  name: dev-hello-world-deployment
+  namespace: demo-app-1-dev
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: hello-world
-  replicas: 1
+      stage: dev
   template:
     metadata:
       labels:
         app: hello-world
+        stage: dev
     spec:
       containers:
-      - name: hello-world
-        image: mendhak/http-https-echo:latest
+      - image: mendhak/http-https-echo:32
+        name: hello-world
         ports:
         - containerPort: 8080
