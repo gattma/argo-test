@@ -19,7 +19,7 @@ spec:
         stage: dev
     spec:
       containers:
-      - image: mendhak/http-https-echo:32
+      - image: mendhak/http-https-echo:32@sha256:8c1a7239d3bffe04ef89b1807fb17256ce7f242b61b315b28e2163d5e2aecaf0
         name: hello-world
         ports:
         - containerPort: 8080
