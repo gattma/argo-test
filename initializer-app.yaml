@@ -7,8 +7,8 @@ spec:
   project: app-of-apps
   source:
     repoURL: https://github.com/gattma/argo-test.git
-    targetRevision: app-of-apps-test
-    path: appsets
+    targetRevision: test/docker-digest
+    path: apps/demo-app-1
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
