@@ -25,7 +25,7 @@ spec:
         syncOptions:
           - CreateNamespace=true
       sources:
-        - repoURL: 'https://bitbucket.org/teamliwest/openshift-cluster-config.git'
+        - repoURL: 'https://github.com/gattma/argo-test.git'
           targetRevision: feature/app-config-test
           path: argocd/instances/application-configurations/application-configurations-chart
           helm:
