@@ -2,16 +2,16 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: instances
-  namespace: gattma-pg
+  namespace: argocd
 spec:
   syncPolicy:
     preserveResourcesOnDeletion: false
   generators:
     - list:
         elements:
-          - instance: nginx1
-            namespace: gattma-pg
-            branch: main
+          - instance: application-configurations
+            namespace: argocd
+            branch: feature/app-config-test
             url: https://kubernetes.default.svc
   template:
     metadata:
