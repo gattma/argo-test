@@ -1,0 +1,7 @@
+appName: test-ns-2-1
+values: |
+  name: test-ns-2-1
+---
+appName: test-ns-2-2
+values: |
+  name: test-ns-2-2
