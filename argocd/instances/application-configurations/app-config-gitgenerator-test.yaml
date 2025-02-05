@@ -31,7 +31,7 @@ spec:
           helm:
             valueFiles:
               - values.yaml
-              - '{{.path.path}}'
+              - '$valuesRef/{{.path.path}}'
         - repoURL: 'https://github.com/gattma/argo-test.git'
           targetRevision: feature/app-config-test
           ref: valuesRef
