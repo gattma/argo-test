@@ -15,7 +15,7 @@ spec:
 
   template:
     metadata:
-      name: "application-test"
+      name: "application-{{.path.basenameNormalized}}"
     spec:
       project: default
       syncPolicy:
@@ -31,8 +31,7 @@ spec:
           helm:
             valueFiles:
               - values.yaml
-            values: |-
-              {{ . }}
+              - {{ .path.path }}
       destination:
         server: "https://kubernetes.default.svc"
         namespace: "argocd"
