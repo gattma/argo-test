@@ -11,9 +11,7 @@ spec:
         repoURL: https://github.com/gattma/argo-test.git
         revision: feature/app-config-test
         files:
-          - path: argocd/instances/application-configurations/values-test/*
-        values:
-          base_dir: test
+          - path: argocd/instances/application-configurations/values-test/*.yaml
 
   template:
     metadata:
@@ -29,14 +27,15 @@ spec:
       sources:
         - repoURL: 'https://github.com/gattma/argo-test.git'
           targetRevision: feature/app-config-test
-          path: argocd/instances/application-configurations/application-configuration-chart
+          ref: values
+
+        - repoURL: 'https://github.com/gattma/argo-test.git'
+          targetRevision: feature/app-config-test
+          chart: argocd/instances/application-configurations/application-configuration-chart
           helm:
             valueFiles:
               - values.yaml
-              - '$valuesRef/{{.values.base_dir}}/{{.path.path}}/{{.path.filename}}'
-        - repoURL: 'https://github.com/gattma/argo-test.git'
-          targetRevision: feature/app-config-test
-          ref: valuesRef
+              - $values/{{ .path.path }}/{{ .path.filename }}'
       destination:
         server: "https://kubernetes.default.svc"
         namespace: "argocd"
