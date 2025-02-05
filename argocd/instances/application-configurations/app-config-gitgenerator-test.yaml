@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: application-configurations
+  namespace: argocd
+spec:
+  syncPolicy:
+    preserveResourcesOnDeletion: true
+  generators:
+    - git:
+        repoURL: https://github.com/gattma/argo-test.git
+        revision: feature/app-config-test
+        files:
+          - path: argocd/instances/application-configurations/values-test/**.yaml
+
+  template:
+    metadata:
+      name: "application-{{ .path.basename }}"
+    spec:
+      project: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+      sources:
+        - repoURL: 'https://github.com/gattma/argo-test.git'
+          targetRevision: feature/app-config-test
+          path: argocd/instances/application-configurations/application-configuration-chart
+          helm:
+            valueFiles:
+              - values.yaml
+            values: |-
+              {{ . }}
+      destination:
+        server: "https://kubernetes.default.svc"
+        namespace: "argocd"
