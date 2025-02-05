@@ -33,7 +33,7 @@ spec:
               - values.yaml
               - $valuesRef/{{.path.path}}
         - repoURL: 'https://github.com/gattma/argo-test.git'
-          targetRevision: HEAD
+          targetRevision: feature/app-config-test
           ref: valuesRef
       destination:
         server: "https://kubernetes.default.svc"
