@@ -31,7 +31,7 @@ spec:
 
         - repoURL: 'https://github.com/gattma/argo-test.git'
           targetRevision: feature/app-config-test
-          chart: argocd/instances/application-configurations/application-configuration-chart
+          path: argocd/instances/application-configurations/application-configuration-chart
           helm:
             valueFiles:
               - values.yaml
