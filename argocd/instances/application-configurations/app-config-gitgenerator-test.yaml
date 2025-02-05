@@ -12,6 +12,8 @@ spec:
         revision: feature/app-config-test
         files:
           - path: argocd/instances/application-configurations/values-test/*
+        values:
+          base_dir: test
 
   template:
     metadata:
@@ -31,7 +33,7 @@ spec:
           helm:
             valueFiles:
               - values.yaml
-              - '$valuesRef/{{.path.path}}/{{.path.filename}}'
+              - '$valuesRef/{{.values.base_dir}}/{{.path.path}}/{{.path.filename}}'
         - repoURL: 'https://github.com/gattma/argo-test.git'
           targetRevision: feature/app-config-test
           ref: valuesRef
