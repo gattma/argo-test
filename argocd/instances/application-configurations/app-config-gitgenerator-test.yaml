@@ -31,7 +31,10 @@ spec:
           helm:
             valueFiles:
               - values.yaml
-              - {{ .path.path }}
+              - $valuesRef/{{.path.path}}
+        - repoURL: 'https://github.com/gattma/argo-test.git'
+          targetRevision: HEAD
+          ref: valuesRef
       destination:
         server: "https://kubernetes.default.svc"
         namespace: "argocd"
