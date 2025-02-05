@@ -15,7 +15,7 @@ spec:
 
   template:
     metadata:
-      name: "application-{{ .path.basename }}"
+      name: "application-test"
     spec:
       project: default
       syncPolicy:

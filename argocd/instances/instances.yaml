@@ -15,7 +15,7 @@ spec:
             url: https://kubernetes.default.svc
   template:
     metadata:
-      name: "instance-test"
+      name: "instance-{{ instance }}"
     spec:
       project: default
       syncPolicy:
