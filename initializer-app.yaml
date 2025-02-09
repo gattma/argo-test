@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: demo-app-initializer-app
+  name: silly-demo-initializer-app
   namespace: argocd
 spec:
-  project: app-of-apps
+  project: default
   source:
     repoURL: https://github.com/gattma/argo-test.git
-    targetRevision: sync-test
+    targetRevision: feature/sync-test
     path: appsets
   destination:
     server: https://kubernetes.default.svc

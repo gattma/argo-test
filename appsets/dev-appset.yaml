@@ -20,7 +20,7 @@ spec:
       project: default
       source:
         repoURL: https://github.com/gattma/argo-test.git
-        targetRevision: sync-test
+        targetRevision: feature/sync-test
         path: '{{.path.path}}'
       destination:
         server: https://kubernetes.default.svc
