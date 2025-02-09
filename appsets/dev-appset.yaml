@@ -9,7 +9,7 @@ spec:
   generators:
   - git:
       repoURL: https://github.com/gattma/argo-test.git
-      revision: sync-test
+      revision: feature/sync-test
       directories:
       - path: apps/*/envs/dev
 
