@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: dev-appset
+  name: silly-demo-dev-appset
   namespace: argocd
 spec:
   goTemplate: true
@@ -9,7 +9,7 @@ spec:
   generators:
   - git:
       repoURL: https://github.com/gattma/argo-test.git
-      revision: app-of-apps-test
+      revision: sync-test
       directories:
       - path: apps/*/envs/dev
 
@@ -17,10 +17,10 @@ spec:
     metadata:
       name: '{{index .path.segments 1}}-{{index .path.segments 3}}' 
     spec:
-      project: app-of-apps
+      project: default
       source:
         repoURL: https://github.com/gattma/argo-test.git
-        targetRevision: app-of-apps-test
+        targetRevision: sync-test
         path: '{{.path.path}}'
       destination:
         server: https://kubernetes.default.svc

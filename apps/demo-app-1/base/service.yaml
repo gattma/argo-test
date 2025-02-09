@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-world
+  name: silly-demo
 spec:
   selector:
-    app: hello-world
+    app: silly-demo
   ports:
     - name: http
       protocol: TCP
