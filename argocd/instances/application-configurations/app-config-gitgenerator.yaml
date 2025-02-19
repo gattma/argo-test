@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: application-configurations
+  name: application-configurations-test
   namespace: argocd
 spec:
   syncPolicy:
@@ -11,11 +11,11 @@ spec:
         repoURL: https://github.com/gattma/argo-test.git
         revision: feature/app-config-test
         files:
-          - path: argocd/instances/application-configurations/values/**.yaml
+          - path: argocd/instances/application-configurations/values-test/**.yaml
 
   template:
     metadata:
-      name: "application-{{ appName }}"
+      name: "application-{{ name }}"
     spec:
       project: default
       syncPolicy:
@@ -31,8 +31,7 @@ spec:
           helm:
             valueFiles:
               - values.yaml
-            values: |-
-              {{ values }}
+              - ../values-test/{{ path.filename }}
       destination:
         server: "https://kubernetes.default.svc"
         namespace: "argocd"
