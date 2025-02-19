@@ -1,0 +1,10 @@
+{
+    "test-ns-2-1": {
+        "name": "test-ns-2-1",
+        "enableCI": true
+    },
+    "test-ns-2-2": {
+        "name": "test-ns-2-2",
+        "enableCI": true
+    }
+}

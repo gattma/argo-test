@@ -1,0 +1,12 @@
+{
+    "namespaces": [
+        {
+            "name": "test-ns-1-1",
+            "enableCI": true
+        },
+        {
+            "name": "test-ns-1-2",
+            "enableCI": true
+        }
+    ]
+}

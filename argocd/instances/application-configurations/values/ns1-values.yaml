@@ -1,7 +1,0 @@
-appName: test-ns-1-1
-values: |
-  name: test-ns-1-1
----
-appName: test-ns-1-2
-values: |
-  name: test-ns-1-2
